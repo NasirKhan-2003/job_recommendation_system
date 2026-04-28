@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommended Jobs</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='projectstyle.css') }}">
+</head>
+<body>
+    <div class="main">
+
+        <div class="topBar">
+            <h2>Recommended Jobs</h2>
+        </div>
+
+        <div class="pageContent">
+            <div class="jobResults">
+                <h3>Recommended Jobs for {{ category }}</h3>
+                <ul>
+                    {% for job in jobs %}
+                        <li>
+                            <a href="{{ job.redirect_url }}" target="_blank">
+                                {{ job.title }}
+                            </a> at {{ job.company.display_name }} – {{ job.location.display_name }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="cvText">
+                <h3>Extracted CV Text</h3>
+                <pre>{{ cv_text }}</pre>
+            </div>
+        </div>
+    </div>
+
+    <div class="endFooter">
+        <footer>
+            @CV_Analyzer all rights reserved
+        </footer>
+    </div>
+</body>
+</html>

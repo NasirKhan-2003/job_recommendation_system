@@ -1,0 +1,208 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Make full height layout */
+html, body {
+    height: 100%;
+}
+
+/* Flex layout for sticky footer */
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url('cv_wallpaper.jpg');
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(2px);
+    font-family: Poppins, sans-serif;
+}
+
+/* Main content grows to push footer down */
+.main {
+    flex: 1;
+}
+
+/* Top bar */
+.topBar {
+    background-color: rgb(45, 57, 51);
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+h2 {
+    color: white;
+}
+
+/* Page content */
+.pageContent {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.pageContent p {
+    margin-top: 1.5rem;
+    max-width: 90%;
+    width: 800px;
+    background-color: rgb(111, 140, 121);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: white;
+}
+
+/* Form */
+form {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+fieldset {
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    border: none;
+    border:2px dotted rgb(45, 57, 51);
+    transition: all 0.3s ease-in-out;
+
+}
+
+fieldset:hover{
+    transition: all 0.3s ease-in-out;
+    transform: translateY(-5px);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* Custom file button */
+label {
+    background-color: rgb(45, 57, 51);
+    cursor: pointer;
+    padding: 1rem 3rem;
+    color: white;
+    border-radius: 0.5rem;
+    margin-top: 3rem;
+    animation: bounce 2s infinite;
+}
+
+label:hover {
+    background-color: rgb(68, 83, 73);
+    transition: 0.5s;
+}
+
+  @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-5px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+  }
+
+/* Submit button */
+input[type="submit"] {
+    font-size: medium;
+    background-color: rgb(45, 57, 51);
+    color: white;
+    margin-top: 2rem;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    box-shadow: 3px 4px rgb(0, 0, 0);
+
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(68, 83, 73);
+    transition: 0.2s;
+}
+
+
+.endFooter {
+    background-color: rgb(45, 57, 51);
+    color: white;
+    text-align: center;
+    text-align: right;
+    font-size: smaller;
+    padding-right: 1rem;
+}
+
+
+/* Recommended Jobs Section */
+.jobResults {
+    margin-top: 2rem;
+    max-width: 800px;
+    width: 90%;
+    background-color: rgb(111, 140, 121); /* same style as intro box */
+    padding: 1rem;
+    border-radius: 1rem;
+    color: white;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+}
+
+.jobResults h3 {
+    margin-bottom: 1rem;
+}
+
+.jobResults ul {
+    list-style: none;
+    padding: 0;
+}
+
+.jobResults li {
+    margin: 0.5rem 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jobResults li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.jobResults a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.jobResults a:hover {
+    text-decoration: underline;
+}
+
+/* CV Text Section */
+.cvText {
+    margin-top: 2rem;
+    background-color: rgba(45,57,51,0.85);
+    color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 800px;
+    text-align: left;
+    font-family: Roboto, sans-serif;
+}
+
+.cvText pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

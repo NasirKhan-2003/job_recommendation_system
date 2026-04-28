@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Upload CV</title>
+
+    <!-- Links -->
+    <link rel="stylesheet" href="/static/projectstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <div class="main">
+
+        <div class="topBar">
+            <h2>CV Analyzer</h2>
+        </div>
+
+        <div class="pageContent">
+
+            <p>Upload your CV and instantly
+                 get personalized <br>job recommendations.
+            </p>
+
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <fieldset>
+
+                        <input type="file" id="uploadButton" name="cvfile" accept=".pdf">
+                        <label for="uploadButton">SELECT FILE</label>
+
+                    <div class="submitButton">
+                        <input type="submit" value="Upload">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </div>
+
+
+
+<div class="endFooter">
+    <footer>
+        @CV_Analyzer all rights reserved
+    </footer>
+</div>
+
+</body>
+</html>
