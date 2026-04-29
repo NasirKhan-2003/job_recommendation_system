@@ -41,15 +41,24 @@ def upload():
     }
 
     response = requests.get(url, params=params).json()
-    jobs = response.get("results", [])
 
-    # --- Format job listings ---
-    job_listings = f"<h3>Recommended Jobs for {category}:</h3><ul>"
-    for job in jobs:
-        job_listings += f"<li><a href='{job['redirect_url']}' target='_blank'>{job['title']}</a> at {job['company']['display_name']} – {job['location']['display_name']}</li>"
-    job_listings += "</ul>"
+    # --- Format job listings into clean dictionaries ---
+    jobs = []
+    for job in response.get("results", []):
+        jobs.append({
+            "title": job.get("title"),
+            "company": job.get("company", {}).get("display_name"),
+            "location": job.get("location", {}).get("display_name"),
+            "redirect_url": job.get("redirect_url")
+        })
 
-    return job_listings + "<hr><h3>Extracted CV Text:</h3><pre>" + text + "</pre>"
+    # --- Render results page with CSS applied ---
+    return render_template(
+        "results.html",
+        jobs=jobs,
+        category=category,
+        cv_text=text
+    )
 
 if __name__ == '__main__':
     app.run(debug=True)
