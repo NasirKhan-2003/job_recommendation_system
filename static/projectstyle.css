@@ -48,7 +48,7 @@ h2 {
     text-align: center;
 }
 
-.pageContent p {
+.pageContent > p {
     margin-top: 1.5rem;
     max-width: 90%;
     width: 800px;
@@ -73,10 +73,10 @@ fieldset {
     flex-direction: column;
     align-items: center;
     border-radius: 1rem;
-    border: none;
-    border:2px dotted rgb(45, 57, 51);
+    border: 2px dashed rgba(45, 57, 51, 0.4);
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
     transition: all 0.3s ease-in-out;
-
 }
 
 fieldset:hover{
