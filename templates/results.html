@@ -2,9 +2,14 @@
 <html>
 <head>
     <title>Recommended Jobs</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='projectstyle.css') }}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='projectstyle.css') }}">
+
 </head>
+
 <body>
+
     <div class="main">
 
         <div class="topBar">
@@ -12,32 +17,59 @@
         </div>
 
         <div class="pageContent">
-            <!-- Recommended Jobs Section -->
+
+            <!-- Job Results -->
             <div class="jobResults">
+
                 <h3>Recommended Jobs for {{ category }}</h3>
+
                 <ul>
                     {% for job in jobs %}
                         <li>
                             <a href="{{ job.redirect_url }}" target="_blank">
                                 {{ job.title }}
-                            </a> at {{ job.company.display_name }} – {{ job.location.display_name }}
+                            </a>
+                            at {{ job.company }} – {{ job.location }}
                         </li>
                     {% endfor %}
                 </ul>
+
             </div>
 
-            <!-- Extracted CV Text Section -->
+             <!--  Back Button -->
+                <div style="margin-top:20px;">
+                    <form action="/" method="get">
+                        <button type="submit" style="
+                            background-color: rgb(45,57,51);
+                            color:white;
+                            padding:10px 20px;
+                            border:none;
+                            border-radius:8px;
+                            cursor:pointer;">
+                            ⬅ Back to Homepage
+                        </button>
+                    </form>
+                </div>
+
+            <!-- CV Text -->
             <div class="cvText">
+
                 <h3>Extracted CV Text</h3>
+
                 <pre>{{ cv_text }}</pre>
+
             </div>
+
         </div>
+
     </div>
 
+    <!-- Footer -->
     <div class="endFooter">
         <footer>
             @CV_Analyzer all rights reserved
         </footer>
     </div>
+
 </body>
 </html>
